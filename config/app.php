@@ -159,6 +159,7 @@ return [
         /*
          * Agregados...
          */
+        Collective\Html\HtmlServiceProvider::class,
         Cviebrock\EloquentSluggable\ServiceProvider::class,
         Caffeinated\Flash\FlashServiceProvider::class,
     ],
@@ -209,6 +210,8 @@ return [
         /*
          * Agregados...
          */
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
         'Flash' => Caffeinated\Flash\Facades\Flash::class,
 
     ],

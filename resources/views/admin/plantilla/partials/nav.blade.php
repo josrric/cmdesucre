@@ -6,7 +6,7 @@
 				</a>
 			</div>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="./index.php">Salir</a></li>
+				<li><a href="./">Salir</a></li>
 			</ul>
 			
 			<div class="container-fluid">

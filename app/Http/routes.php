@@ -82,7 +82,7 @@ Route::group([ 'prefix' => 'admin'], function(){
 	});
 
 	Route::get('access', ['as' => 'acceso', function() {
-		return view('admin.plantilla.access');
+		return view('admin.plantilla.main');
 	}]);
 
 	Route::resource('users','UsersController');

@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Publicacion;
+use App\Categoria;
+use App\Http\Requests\PublicacionRequest;
+use Caffeinated\Flash\Facades\Flash;
 
 class PublicacionsController extends Controller
 {
@@ -15,7 +19,9 @@ class PublicacionsController extends Controller
      */
     public function index()
     {
-        //
+        $p=Publicacion::orderBy('id', 'ASC')->paginate(7);
+
+        return view('admin.publicacion.index')->with('public', $p);
     }
 
     /**
@@ -25,7 +31,9 @@ class PublicacionsController extends Controller
      */
     public function create()
     {
-        //
+        $categorias= Categoria::orderBy('nombre', 'ASC')->lists('nombre','id');
+
+        return view('admin.publicacion.registro')->with('categoria', $categorias);
     }
 
     /**
@@ -34,9 +42,19 @@ class PublicacionsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PublicacionRequest $request)
     {
-        //
+        $p=new Publicacion();
+        $p->titulo=$request->titulo;
+        $p->contenido=$request->contenido;
+        $p->categoria_id=$request->categoria_id;
+        $p->user_id=40;
+        $p->save();
+
+        flash::success('Publicacion Creada');
+
+        return redirect()->route('admin.publicaciones.index');
+
     }
 
     /**
@@ -58,7 +76,10 @@ class PublicacionsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $p=Publicacion::find($id);
+        $categorias= Categoria::orderBy('nombre', 'ASC')->lists('nombre','id');
+
+        return view('admin.publicacion.update')->with('public', $p)->with('categoria', $categorias);
     }
 
     /**
@@ -70,7 +91,14 @@ class PublicacionsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $p=Publicacion::find($id);
+        $p->titulo=$request->titulo;
+        $p->categoria_id=$request->categoria_id;
+        $p->contenido=$request->contenido;
+        $p->save();
+
+        flash::warning('Se ha cambiado Exitosamente');
+        return redirect()->route('admin.publicaciones.index');
     }
 
     /**
@@ -81,6 +109,10 @@ class PublicacionsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $p=Publicacion::find($id);
+        $p->delete();
+
+        Flash::error('Noticia Eliminada');
+        return redirect()->route('admin.publicaciones.index');
     }
 }

@@ -4,21 +4,23 @@
 	<div class="container">
 		<div class="col-sm-10 col-sm-offset-2">
 			<div class="page-header">
-				<h3>Publicaciones</h3>
+				<h3>Noticias</h3>
 			</div>
 			<div class="table-responsive">
 				<table class="table table-striped table-hover"">
 					<thead>
 						<th>Titulo</th>
+						<th>Fecha</th>
 						<th>Acciones</th>
 					</thead>
 					<tbody >
-						@foreach($publicacion as $publicacion)
+						@foreach($public as $p)
 						<tr>
-							<td>{{ $publicacion->titulo }}</td>
+							<td>{{ $p->titulo }}</td>
+							<td>{{ $p->created_at }}</td>
 							<td>
-								<a href="" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span> Editar</a> 
-								<a href="" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Eliminar</a>
+								<a href="{{ route('admin.publicaciones.edit', $p->id) }}" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"> Modificar</span></a> 
+								<a href="{{ route('admin.publicaciones.destroy', $p->id) }}" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"> Eliminar</span></a>
 							</td>
 						</tr>
 						@endforeach
@@ -26,10 +28,10 @@
 				</table>
 			</div>
 			<div class="row">
-				
-				{!! $publicacion->render() !!}
-					
-				<a href="{{ route('admin.users.create')}}" class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus"></span> Registrar </a>
+				 
+				 {{ $public->render() }}
+				<br>
+				<a href="{{ route('admin.publicaciones.create')}}" class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus"></span> Agregar Publicacion </a>
 			</div>
 		</div>
 	</div>

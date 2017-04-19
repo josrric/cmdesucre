@@ -15,14 +15,14 @@
 						<th>Acciones</th>
 					</thead>
 					<tbody >
-						@foreach($users as $u)
+						@foreach($user as $u)
 						<tr>
 							<td>{{ $u->name }}</td>
-							<td>{{ $u->email}}</td>
+							<td>{{ $u->email }}</td>
 							<td>{{ $u->type }}</td>
 							<td>
-								<a href="{{ route('admin.users.edit', $u->id) }}" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span> Editar</a> 
-								<a href="{{ route('admin.users.destroy', $u->id) }}" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Eliminar</a>
+								<a href="{{ route('admin.users.edit', $u->id) }}" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"> Modificar</span></a> 
+								<a href="{{ route('admin.users.destroy', $u->id) }}" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"> Eliminar</span></a>
 							</td>
 						</tr>
 						@endforeach
@@ -30,10 +30,10 @@
 				</table>
 			</div>
 			<div class="row">
-				
-				{!! $users->render() !!}
-					
-				<a href="{{ route('admin.users.create')}}" class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus"></span> Registrar </a>
+				 
+				 {{ $user->render() }}
+				<br>
+				<a href="{{ route('admin.users.create')}}" class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus"></span> Registrar Usuario </a>
 			</div>
 		</div>
 	</div>
