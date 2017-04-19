@@ -1,0 +1,205 @@
+*{
+	font-size: 16px;
+}
+
+hr {
+	border-color: #eb1000;
+}
+/* HEADER
+============================================*/
+.img-header{
+	border-bottom: 2px solid #eb1000;
+}
+
+.jumbotron {
+	max-width: 1140px;
+	padding-bottom: 135px;
+	margin-bottom: 0px;
+	background-image: url("/cmdesucre.v1/public/img/bann6.jpg");
+	background-size: 100% 100%;
+	background-position: center center;
+}
+
+.jumbotron h1 {
+	margin-top: -25px;
+	margin-bottom: 0px;
+	font-size: 47px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	line-height: 1.39;
+}
+
+/*  NAV
+=======================================*/
+nav {
+	box-shadow: 0px 4px 10px -4px;
+    background-image: -webkit-linear-gradient(top, #ff6b61 0%, #eb1000 100%);
+    /*background-image: -webkit-linear-gradient(top, #ff7547 0%,#FF1a1a 100%);*/
+}
+
+.nav-pills > li > a {
+	padding-top: 14px;
+	padding-bottom: 14px;
+	border-left: 1px solid #ff9999;
+  	border-right: 1px solid #e60000;
+    color: #fff;
+    -webkit-border-radius: 0px;
+    	-moz-border-radius: 0px;
+    		border-radius: 0px;
+}
+
+.nav.pills li a {
+	font-weight: bold;
+}
+
+.nav-pills > li:last-child > a {
+	border-right: 0;
+}
+
+.nav-pills > li:first-child > a, 
+.nav-pills > li:first-child > a:hover {
+	border-left: 0;
+	padding-left: 12px;
+}
+
+.nav-pills > li > a:hover {
+	color:#eb1000;
+}
+
+.nav-pills li:hover > ul {
+	display: block;
+}
+
+.nav-pills li > ul:hover > ul {
+	display: block;
+}
+
+.dropdown-menu{
+	width: 100%;
+	margin: 0;
+	background: #eee;
+	border-radius: 0 0 4px 4px;
+}
+
+.dropdown-menu > li > a {
+	padding: 4px 17px;
+	line-height: 1.9857143;
+	color: #fff;
+	border-bottom: 1px solid #eee;
+	background-image: -webkit-linear-gradient(top, #ff6b61 0%, #eb1000 100%);
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu > .dropdown-menu {
+	width: auto;
+    top: -6px;
+    left: 100%;
+    margin-top: 0px;
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+	* {
+		font-size: 94%;
+	}
+	.jumbotron {
+		max-width: 720px;
+		padding-bottom: 99px;
+	}
+	.jumbotron h1 {
+		font-size: 35px;
+	}
+
+	.nav-pills li a {
+		font-size: 9.7px;
+		font-weight: bold;
+	}
+
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+	* {
+		font-size: 99%;
+	}
+
+	.jumbotron {
+		max-width: 940px;
+		padding-bottom: 115px;
+	}
+
+	.jumbotron h1 {
+		font-size: 42px;
+		margin-top: -18px;
+	}
+
+	.nav-pills li a {
+		font-size: 12px;
+		font-weight: bold;
+	}
+
+}
+/* SECTION
+=========================================*/
+.content {
+	width: 72%;
+	line-height: 18px;
+}
+
+/* ASIDE
+=========================================*/
+.date{
+	border-top:0px solid #eb1000;
+	border-bottom: 1px solid #eb1000; 
+	background: #eb1000;
+	border-radius:6px;
+	background-image: -webkit-linear-gradient(top, #ff6b61 0%, #eb1000 100%);
+}
+
+.date p{
+	color:#ffffff;
+}
+
+.login {
+	border-top: 2px solid #eb1000;
+	border-radius:0px 0px 4px 0px;
+	-webkit-box-shadow:3px 3px 4px 1px #efefef;
+}
+
+.login form {
+	margin-top: 10px;
+}
+
+.post {
+	-webkit-box-shadow:3px 3px 4px 1px #efefef;
+}
+
+.post .page-header {
+	margin:0px;
+	border-bottom: 0;
+	background-image: -webkit-linear-gradient(top, #ff6b61 0%, #eb1000 100%);
+}
+
+.post .page-header > h4 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	color: #fff;
+	padding-top: 10px;
+}
+
+.post a > img {
+	width: 100%;
+}
+
+/* FOOTER
+=====================================*/
+footer {
+	background:#eb1000;
+	background-image: -webkit-linear-gradient(bottom, #ff6b61 0%, #eb1000 100%);
+	bottom: 0px;
+	width: 100%;
+}
+
+footer p{
+	color:#fff;
+}

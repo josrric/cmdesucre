@@ -1,0 +1,24 @@
+body {
+	background-attachment: fixed;
+	background-image: -webkit-linear-gradient(top, #ff6b61 20%, #eb1000 100%);
+}
+
+.centered {
+	height: 100%;
+	float: none;
+    display: block;
+    margin: 0 auto;
+    padding-top: 10%;
+}
+
+h2 {
+	margin-bottom: 25px;
+	color: #fff;
+
+}
+.form-group .form-control {
+	padding: 23px 15px;
+	font-size: 16px;
+	margin-bottom: 23px;
+	border:none;
+}
