@@ -78,7 +78,7 @@ Route::group(['prefix' => '/'], function(){
 Route::group([ 'prefix' => 'admin'], function(){
 
 	Route::get('', function(){
-		return view('admin.plantilla.main');
+		return view('admin.index');
 	});
 
 	Route::get('access', ['as' => 'acceso', function() {
